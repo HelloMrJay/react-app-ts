@@ -2,7 +2,7 @@
   height: 100vh;
 }
 
-.a-layout-container .trigger {
+.a-layout-container .ignore {
   font-size: 18px;
   line-height: 64px;
   padding: 0 24px;
@@ -10,7 +10,7 @@
   transition: color 0.3s;
 }
 
-.a-layout-container .trigger:hover {
+.a-layout-container .ignore:hover {
   color: #1890ff;
 }
 

@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
   Redirect
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import Login from './pages/login/login';
 import Home from './pages/home/home';
@@ -15,8 +15,8 @@ const App: React.FC = () => {
     <Router>
       <Redirect from="/" to="/home"></Redirect>
       <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/login" component={Login} />
+        <Route path="/home" component={Home}/>
+        <Route path="/login" component={Login}/>
       </Switch>
     </Router>
   );
