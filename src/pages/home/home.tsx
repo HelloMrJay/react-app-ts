@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import UserList from '../userList/userList';
-import "./home.css";
-import { Layout, Menu, Icon } from 'antd';
+import menuItems from "../../config/menu-config";
+import './home.css';
+import {Layout, Menu, Icon} from 'antd';
 import {
   Route,
   useHistory
-} from "react-router-dom";
-const { Header, Sider, Content } = Layout;
+} from 'react-router-dom';
+
+const {Header, Sider, Content} = Layout;
 
 const Home: React.FC = () => {
   const history = useHistory();
@@ -18,42 +20,28 @@ const Home: React.FC = () => {
   };
 
   useEffect(() => {
+    history.location.pathname === '/home' && history.push('/home/userlist');
     document.title = 'react'
   });
-
-  const menuItems = [
-    {
-      name: '用户列表',
-      icon: 'user'
-    },
-    {
-      name: '视频列表',
-      icon: 'video-camera'
-    },
-    {
-      name: '下载列表',
-      icon: 'video-camera'
-    }
-  ];
 
   return (
     <Layout className="a-layout-container">
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick={onClick}>
+        <div className="logo"/>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']} onClick={onClick}>
           {
             menuItems.map((itm, idx) => {
               return (
-                <Menu.Item key={idx}><Icon type={itm.icon} /><span>{itm.name}</span></Menu.Item>
+                <Menu.Item key={idx}><Icon type={itm.icon}/><span>{itm.name}</span></Menu.Item>
               )
             })
           }
         </Menu>
       </Sider>
       <Layout>
-        <Header style={{ background: '#fff', padding: 0 }}>
+        <Header style={{background: '#fff', padding: 0}}>
           <Icon
-            className="trigger"
+            className="trigger ignore"
             type={collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={() => setCollapsed(!collapsed)}
           />
