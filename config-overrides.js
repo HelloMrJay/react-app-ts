@@ -1,6 +1,10 @@
 const { override, fixBabelImports, addLessLoader, addPostcssPlugins } = require("customize-cra");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const addCustomize = () => config => {
+  let plugins = [
+    new BundleAnalyzerPlugin()
+  ]
   require('react-app-rewire-postcss')(config, {
         plugins: loader => [
             require('postcss-flexbugs-fixes'),
@@ -31,6 +35,7 @@ const addCustomize = () => config => {
             })
         ]
     });
+  config.plugins = [...config.plugins, ...plugins]
   return config;
 }
 

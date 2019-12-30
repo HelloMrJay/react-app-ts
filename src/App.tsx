@@ -12,7 +12,7 @@ import Home from './pages/home/home';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/rat">
       <Redirect from="/" to="/home"></Redirect>
       <Switch>
         <Route path="/home" component={Home}/>
