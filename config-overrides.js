@@ -5,6 +5,7 @@ const addCustomize = () => config => {
   let plugins = [
     new BundleAnalyzerPlugin()
   ]
+  /*
   require('react-app-rewire-postcss')(config, {
         plugins: loader => [
             require('postcss-flexbugs-fixes'),
@@ -20,7 +21,7 @@ const addCustomize = () => config => {
                 viewportHeight: 1334, // (Number) The height of the viewport.
                 unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to.
                 viewportUnit: 'vw', // (String) Expected units.
-                selectorBlackList: ['.ignore', '.hairlines', '.ant'], // (Array) The selectors to ignore and leave as px.
+                selectorBlackList: ['.ignore', '.hairlines', '.ant', '.login-container'], // (Array) The selectors to ignore and leave as px.
                 minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
                 mediaQuery: false // (Boolean) Allow px to be converted in media queries.
             }),
@@ -35,6 +36,7 @@ const addCustomize = () => config => {
             })
         ]
     });
+  */
   config.plugins = [...config.plugins, ...plugins]
   return config;
 }

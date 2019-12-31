@@ -20,7 +20,7 @@ const BasicLayout: React.FC<LayoutProps> = (props) => {
   };
 
   useEffect(() => {
-    history.location.pathname === '/home' && history.push('/home/userlist');
+    history.location.pathname === '/home' && history.push('/login');
     document.title = 'react'
   });
 
