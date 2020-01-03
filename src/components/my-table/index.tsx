@@ -3,26 +3,26 @@ import { Table, Divider, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 
 interface MyTableProps {
-  children?: React.ReactNode,
-  data: any[]
-};
+  children?: React.ReactNode;
+  data: any[];
+}
 
 const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (text: string) => <Link to="#">Invite {text}</Link>,
+    render: (text: string) => <Link to="#">Invite {text}</Link>
   },
   {
     title: 'Age',
     dataIndex: 'age',
-    key: 'age',
+    key: 'age'
   },
   {
     title: 'Address',
     dataIndex: 'address',
-    key: 'address',
+    key: 'address'
   },
   {
     title: 'Tags',
@@ -42,7 +42,7 @@ const columns = [
           );
         })}
       </span>
-    ),
+    )
   },
   {
     title: 'Action',
@@ -53,14 +53,12 @@ const columns = [
         <Divider type="vertical" />
         <Link to="#">Delete</Link>
       </span>
-    ),
-  },
+    )
+  }
 ];
 
-const MyTable: React.FC<MyTableProps> = (props) => {
-  return (
-    <Table columns={columns} dataSource={props.data} />
-  )
+const MyTable: React.FC<MyTableProps> = props => {
+  return <Table columns={columns} dataSource={props.data} />;
 };
 
 // 或者

@@ -15,8 +15,8 @@ const App: React.FC = () => {
     <Router>
       <Redirect from="/" to="/home"></Redirect>
       <Switch>
-        <Route path="/home" component={Home}/>
-        <Route path="/login" component={Login}/>
+        <Route path="/home" component={Home} />
+        <Route path="/login" component={Login} />
       </Switch>
     </Router>
   );
