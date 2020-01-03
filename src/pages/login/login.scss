@@ -1,0 +1,16 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg);
+
+  .login-main-wrapper {
+    width: 368px;
+
+    .login-form-button {
+      width: 100%;
+    }
+  }
+}
