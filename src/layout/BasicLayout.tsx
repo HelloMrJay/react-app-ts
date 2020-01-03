@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import menuItems from '../config/menu-config';
 import { Layout, Menu, Icon } from 'antd';
 import { useHistory } from 'react-router-dom';
@@ -18,11 +18,6 @@ const BasicLayout: React.FC<LayoutProps> = props => {
       history.push('/home/userlist');
     }
   };
-
-  useEffect(() => {
-    history.location.pathname === '/home' && history.push('/login');
-    document.title = 'react';
-  });
 
   return (
     <Layout className="a-layout-container ignore">
