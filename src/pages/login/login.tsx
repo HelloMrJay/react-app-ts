@@ -9,9 +9,8 @@ const Login: React.FC<FormComponentProps> = props => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     props.form.validateFields((err, fieldsValue) => {
-      console.log(err)
       if (err) return;
-      console.log(fieldsValue)
+      console.log(fieldsValue);
     });
   };
 
@@ -19,7 +18,7 @@ const Login: React.FC<FormComponentProps> = props => {
     <div className="login-container">
       <div className="login-main-wrapper">
         <Form labelAlign="left" onSubmit={handleSubmit} className="login-form">
-          <Form.Item label={ <span style={{fontSize: '16px'}}>用户名</span> }>
+          <Form.Item label={<span style={{ fontSize: "16px" }}>用户名</span>}>
             {getFieldDecorator("username", {
               rules: [{ required: true, message: "请输入用户名" }]
             })(
@@ -32,7 +31,7 @@ const Login: React.FC<FormComponentProps> = props => {
             )}
           </Form.Item>
 
-          <Form.Item label={ <span style={{fontSize: '16px'}}>密码</span> }>
+          <Form.Item label={<span style={{ fontSize: "16px" }}>密码</span>}>
             {getFieldDecorator("password", {
               rules: [{ required: true, message: "请输入密码" }]
             })(
@@ -50,9 +49,12 @@ const Login: React.FC<FormComponentProps> = props => {
               valuePropName: "checked",
               initialValue: true
             })(<Checkbox>Remember me</Checkbox>)}
-            <a className="login-form-forgot" href="">
-              Forgot password
-            </a>
+            {
+              // eslint-disable-next-line
+              <a className="login-form-forgot" href="">
+                Forgot password
+              </a>
+            }
             <Button
               type="primary"
               htmlType="submit"
@@ -60,7 +62,11 @@ const Login: React.FC<FormComponentProps> = props => {
             >
               Log in
             </Button>
-            Or <a href="">register now!</a>
+            Or
+            {
+              // eslint-disable-next-line
+              <a href="">register now!</a>
+            }
           </Form.Item>
         </Form>
       </div>

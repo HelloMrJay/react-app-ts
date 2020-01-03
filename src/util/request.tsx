@@ -21,7 +21,7 @@ axios.interceptors.response.use(function (response) {
 });
 
 const _axios = axios.create({
-  baseURL: 'https://some-domain.com/api/',
+  baseURL: '/api/',
   timeout: 1000
 });
 

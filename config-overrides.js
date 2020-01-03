@@ -1,12 +1,12 @@
 const { override, fixBabelImports, addLessLoader, addPostcssPlugins } = require("customize-cra");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { exec } = require('child_process')
+const { exec } = require('child_process');
 
 const addCustomize = () => config => {
   let plugins = [
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ]
-  exec(`node ${__dirname}/backend/server.js`)
+  exec(`ts-node-dev --respawn --transpileOnly --project ${__dirname}/src/mock/tsconfig.json ${__dirname}/src/mock/app.ts`)
   config.plugins = [...config.plugins, ...plugins]
   return config;
 }
