@@ -1,5 +1,11 @@
-import express from "express";
+import express from 'express';
+import errorCode from '../config/errorCode';
 
-export const getUser = (request: express.Request, response: express.Response) => {
-  response.send({ name: 'loupengju', agr: 500 })
-}
+export const login = (request: express.Request, response: express.Response) => {
+  let { body } = request;
+  if (body.username !== 'loupengju') {
+    response.send({ status: 201, message: errorCode[201] });
+  }
+
+  response.send({ status: 200 });
+};

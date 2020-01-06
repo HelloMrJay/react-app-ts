@@ -13,10 +13,10 @@ import Home from './pages/home/home';
 const App: React.FC = () => {
   return (
     <Router>
-      <Redirect from="/" to="/home"></Redirect>
+      <Redirect from="/" to="/login"></Redirect>
       <Switch>
-        <Route path="/home" component={Home}/>
-        <Route path="/login" component={Login}/>
+        <Route path="/home" component={Home} />
+        <Route path="/login" component={Login} />
       </Switch>
     </Router>
   );
