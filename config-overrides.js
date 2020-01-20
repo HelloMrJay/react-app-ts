@@ -6,7 +6,6 @@ const addCustomize = () => config => {
   let plugins = [
     // new BundleAnalyzerPlugin()
   ]
-  exec(`ts-node-dev --respawn --transpileOnly --project ${__dirname}/src/mock/mockconfig.json ${__dirname}/src/mock/app.ts`)
   config.plugins = [...config.plugins, ...plugins]
   return config;
 }
